@@ -1,5 +1,5 @@
 FROM python:3.7.8-slim-stretch
-RUN apt update -y
+RUN apt update
 RUN apt-get install build-essential -y
 RUN mkdir /app
 COPY . /app
