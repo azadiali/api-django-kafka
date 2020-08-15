@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  zookeeper:
+    image: 'docker.io/zookeeper:3.6.1'
+    container_name: zookeeper
+    networks:
+      - api-django-kafka-net
+  
+  kafka:
+    image: 'docker.io/bitnami/kafka:2.6.0'
+    container_name: kafka
+    environment:
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+      - zookeeper
+    networks:
+      - api-django-kafka-net
+
+  django:
+    build: .     
+    image: 'api-django-kafka:1'
+    container_name: django
+    ports:
+      - 8000:8000
+    depends_on:
+      - kafka
+    networks:
+      - api-django-kafka-net
+
+networks:
+   api-django-kafka-net:
