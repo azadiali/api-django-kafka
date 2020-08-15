@@ -18,7 +18,8 @@ data input (with POST method) example:
 
 data gathering example:
 
-[IP]:8000/?name=example
+
+       url[IP]:8000/?name=example
 
 
 
