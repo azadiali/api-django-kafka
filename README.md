@@ -1,6 +1,6 @@
 # API service with Kafka
 
-docker-compose up -d
+docker-compose -f api-djanog-kafka.yml up -d
 
 =====================================\n
 
