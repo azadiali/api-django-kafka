@@ -1,8 +1,8 @@
 # API service with Kafka
 
-docker-compose -f api-django-kafka.yml up -d
+docker-compose up -d
 
-=====================================\n
+=====================================
 
 data input (with POST method) example:   
 
