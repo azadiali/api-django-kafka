@@ -41,5 +41,5 @@ jobs:
     steps:
       - run: docker images
       - run: docker pull nginx
-      - run: docker export -o a.tar alpine:latest
+      - run: docker export -o a.tar nginx:latest
   
