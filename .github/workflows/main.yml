@@ -43,7 +43,8 @@ jobs:
       - run: |
           docker pull nginx 
           docker images
-          docker export -o a.tar nginx:latest
+          docker save -o a.tar nginx:latest
       - run: docker images
-      - run: docker export -o a.tar nginx:latest
+      - run: docker save -o b.tar nginx:latest
+      - run: ls 
   
