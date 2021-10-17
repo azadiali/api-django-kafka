@@ -39,7 +39,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: docker images | grep nginx 
+      - run: docker images
       - run: docker pull nginx
       - run: docker export -o a.tar alpine:latest
   
