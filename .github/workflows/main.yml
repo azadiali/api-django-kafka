@@ -47,4 +47,8 @@ jobs:
       - run: docker images
       - run: docker save -o b.tar nginx:latest
       - run: ls 
-  
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: api upload
+          path: a.tar
